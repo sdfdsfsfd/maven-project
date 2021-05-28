@@ -22,11 +22,11 @@ steps:
     secureFile: 'settings.xml'
 - script: |
     ls
-    pwd
-    cd $(Agent.TempDirectory)
+    #pwd
+    #cd $(Agent.TempDirectory)
     
     ls 
-    cat settings.xml
+    #cat settings.xml
 - task: Bash@3
   inputs:
     targetType: 'inline'
@@ -50,7 +50,7 @@ steps:
         </settings>
       EOF
       ls
-      cat settings.xml
+      #cat settings.xml
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
