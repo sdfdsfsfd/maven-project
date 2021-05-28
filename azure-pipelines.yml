@@ -10,8 +10,8 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-#variables:
-#- group: setting_secret
+variables:
+- group: setting_secret
 
 steps:
 
@@ -26,6 +26,7 @@ steps:
     script: |
       # Write your commands here
       #echo $(test)
+      ls
       echo Hello, world!
       cat >settings.xml <<EOF
         <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -36,7 +37,7 @@ steps:
           <server>
             <id>moh</id>
             <username>mohasinpathan005</username>
-            <password>testi</password>
+            <password>$(test)</password>
           </server>
         </servers>
         </settings>
@@ -53,5 +54,5 @@ steps:
     #publishJUnitResults: true
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
     
-    #options: '--settings settings.xml'
+    options: '--settings settings.xml'
     goals: 'compile'
