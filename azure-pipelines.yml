@@ -27,4 +27,4 @@ steps:
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
     
     options: '--settings $(settings_xml.secureFilePath)'
-    goals: 'deploy'
+    goals: 'compile'
