@@ -10,22 +10,22 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-#variables:
-#- group: setting_secret
+variables:
+- group: setting_secret
 
 steps:
 
-- task: DownloadSecureFile@1
-  name: settings_xml
-  displayName: Securefile download
-  inputs:
-    secureFile: 'settings.xml'
-- script: |
-    ls
+#- task: DownloadSecureFile@1
+ # name: settings_xml
+  #displayName: Securefile download
+  #inputs:
+   # secureFile: 'settings.xml'
+#- script: |
+ #   ls
     #pwd
     #cd $(Agent.TempDirectory)
     
-    ls 
+  #  ls 
     #cat settings.xml
 - task: Bash@3
   inputs:
@@ -34,8 +34,9 @@ steps:
       # Write your commands here
       #echo $(test)
       ls
+      pwd
       echo Hello, world!
-      cat >settin.xml <<EOF
+      cat >settings.xml <<EOF
         <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
@@ -44,13 +45,14 @@ steps:
           <server>
             <id>moh</id>
             <username>mohasinpathan005</username>
-            <password>itest)</password>
+            <password>$(test)</password>
           </server>
         </servers>
         </settings>
       EOF
       ls
-      #cat settings.xml
+      pwd
+      cat settings.xml
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -61,5 +63,6 @@ steps:
     #publishJUnitResults: true
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
     
-    options: '--settings $(settings_xml.secureFilePath)'
+    #options: '--settings $(settings_xml.secureFilePath)'
+    options: '--settings ./settings.xml'
     goals: 'compile'
