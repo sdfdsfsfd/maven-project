@@ -26,5 +26,5 @@ steps:
     #publishJUnitResults: true
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
     
-    options: '$(settings_xml.secureFilePath)'
+    options: '--settings $(settings_xml.secureFilePath)'
     goals: 'compile'
