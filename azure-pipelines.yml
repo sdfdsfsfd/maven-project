@@ -22,7 +22,9 @@ steps:
     secureFile: 'settings.xml'
 - script: |
     ls
-    pwd 
+    pwd
+    cd $(Agent.TempDirectory)
+    ls 
 
 - task: Bash@3
   inputs:
