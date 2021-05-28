@@ -24,8 +24,9 @@ steps:
     ls
     pwd
     cd $(Agent.TempDirectory)
+    
     ls 
-
+    cat settings.xml
 - task: Bash@3
   inputs:
     targetType: 'inline'
