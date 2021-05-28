@@ -45,7 +45,7 @@ steps:
           <server>
             <id>moh</id>
             <username>mohasinpathan005</username>
-            <password>$(test)</password>
+            <password>testi</password>
           </server>
         </servers>
         </settings>
@@ -65,4 +65,4 @@ steps:
     
     #options: '--settings $(settings_xml.secureFilePath)'
     options: '--settings ./settings.xml'
-    goals: 'compile'
+    goals: 'clean deploy'
