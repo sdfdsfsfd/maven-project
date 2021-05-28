@@ -10,15 +10,15 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-- group: setting_secret
+#variables:
+#- group: setting_secret
 
 steps:
 
-#- task: DownloadSecureFile@1
-#  name: settings_xml
-#  inputs:
-#    secureFile: 'settings.xml'
+- task: DownloadSecureFile@1
+  name: settings_xml
+  inputs:
+    secureFile: 'settings.xml'
 
 - task: Bash@3
   inputs:
@@ -28,7 +28,7 @@ steps:
       #echo $(test)
       ls
       echo Hello, world!
-      cat >settings.xml <<EOF
+      cat >settin.xml <<EOF
         <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
@@ -37,7 +37,7 @@ steps:
           <server>
             <id>moh</id>
             <username>mohasinpathan005</username>
-            <password>$(test)</password>
+            <password>itest)</password>
           </server>
         </servers>
         </settings>
@@ -54,5 +54,5 @@ steps:
     #publishJUnitResults: true
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
     
-    options: '--settings settings.xml'
+    options: '--settings $(settings_xml.secureFilePath)'
     goals: 'compile'
