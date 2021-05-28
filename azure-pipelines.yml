@@ -17,6 +17,7 @@ steps:
 
 - task: DownloadSecureFile@1
   name: settings_xml
+  displayName: Securefile download
   inputs:
     secureFile: 'settings.xml'
 
