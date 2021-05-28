@@ -20,8 +20,27 @@
     <module>server</module>
     <module>webapp</module>
   </modules>
-
+  <repository>
+    <id>moh</id>
+    <url>https://pkgs.dev.azure.com/mohasinpathan005/mohasinpathan005/_packaging/moh/maven/v1</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
   <distributionManagement>
+    <repository>
+      <id>moh</id>
+      <url>https://pkgs.dev.azure.com/mohasinpathan005/mohasinpathan005/_packaging/moh/maven/v1</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
     <site>
       <id>site-server</id>
       <name>Test Project Site</name>
