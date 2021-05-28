@@ -21,7 +21,8 @@ steps:
   inputs:
     secureFile: 'settings.xml'
 - script: |
-    ls 
+    ls
+    pwd 
 
 - task: Bash@3
   inputs:
