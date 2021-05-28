@@ -45,7 +45,7 @@ steps:
           <server>
             <id>moh</id>
             <username>mohasinpathan005</username>
-            <password>$(test)</password>
+            <password>$(pwd)</password>
           </server>
         </servers>
         </settings>
@@ -65,5 +65,5 @@ steps:
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
     
     #options: '--settings $(settings_xml.secureFilePath)'
-    options: '--settings $(Agent.BuildDirectory)/s/settings.xml'
+    options: '--settings settings.xml'
     goals: 'clean deploy'
