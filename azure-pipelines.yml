@@ -20,6 +20,8 @@ steps:
   displayName: Securefile download
   inputs:
     secureFile: 'settings.xml'
+- script: |
+    ls 
 
 - task: Bash@3
   inputs:
