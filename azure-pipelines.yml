@@ -53,5 +53,5 @@ steps:
     #publishJUnitResults: true
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
     
-    options: '--settings settings.xml'
+    #options: '--settings settings.xml'
     goals: 'compile'
