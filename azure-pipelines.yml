@@ -10,8 +10,8 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-- group: setting_secret
+#variables:
+#- group: setting_secret
 
 steps:
 
@@ -25,7 +25,7 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      echo $(test)
+      #echo $(test)
       echo Hello, world!
       cat >settings.xml <<EOF
         <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -36,7 +36,7 @@ steps:
           <server>
             <id>moh</id>
             <username>mohasinpathan005</username>
-            <password>$(test)</password>
+            <password>testi</password>
           </server>
         </servers>
         </settings>
