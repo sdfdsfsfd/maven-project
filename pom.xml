@@ -15,6 +15,21 @@
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
   </properties>
+        
+  <pluginRepositories>
+        <pluginRepository>
+            <!-- Use the repositoryId from the previous step -->
+            <id>moh</id>
+            <!-- Use the repositoryUrl from the previous step -->
+            <url>https://pkgs.dev.azure.com/mohasinpathan005/mohasinpathan005/_packaging/moh/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+   </pluginRepositories>
 
   <modules>
     <module>server</module>
