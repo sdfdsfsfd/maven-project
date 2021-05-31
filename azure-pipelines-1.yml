@@ -19,7 +19,7 @@ steps:
     script: |
       # Write your commands here
       ls -l
-      cat $(secretfile)
+      #cat $(secretfile)
       pwd 
       ls -l
 - task: Maven@3
