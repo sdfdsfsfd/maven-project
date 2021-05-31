@@ -19,7 +19,9 @@ steps:
     azureSubscription: 'Pay-As-You-Go (b5e3024f-bc2c-4de4-8db0-bd025a10d518)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az keyvault secret download'
+    inlineScript: 'az keyvault secret download --file settings.xml --name secretfile --vault-name testmoh'
+    ls -l
+    pwd
 - task: Bash@3
   inputs:
     targetType: 'inline'
