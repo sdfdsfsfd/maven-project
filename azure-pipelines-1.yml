@@ -24,6 +24,12 @@ steps:
 #      ls -l
 #      pwd
 
+# Download Azure Key Vault Secrets
+- task: AzureKeyVault@1
+  inputs:
+    azureSubscription: 'Pay-As-You-Go (b5e3024f-bc2c-4de4-8db0-bd025a10d518)'
+    keyVaultName: 'testmoh'
+    secretsFilter: 'secretfile' # Options: editableOptions
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
