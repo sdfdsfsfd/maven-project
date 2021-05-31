@@ -18,8 +18,8 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      ls -l $(Agent.TempDirectory)
-      cp $(secretfile) settings.xml
+      ls -l
+      cat $(secretfile)
       pwd 
       ls -l
 - task: Maven@3
