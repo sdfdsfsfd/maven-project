@@ -37,5 +37,5 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
-    options: '--settings settings.xml'
+    options: '--settings $(secretfile)'
     goals: 'clean deploy'
