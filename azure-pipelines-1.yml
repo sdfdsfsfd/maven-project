@@ -14,22 +14,16 @@ variables:
 - group: setting_secret
 
 steps:
-#- task: AzureCLI@2
-#  inputs:
-#    azureSubscription: 'Pay-As-You-Go (b5e3024f-bc2c-4de4-8db0-bd025a10d518)'
-#    scriptType: 'bash'
-#    scriptLocation: 'inlineScript'
-#    inlineScript: |
-#      az keyvault secret download --file settings.xml --name secretfile --vault-name testmoh
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Pay-As-You-Go (b5e3024f-bc2c-4de4-8db0-bd025a10d518)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az keyvault secret download --file settings.xml --name secretfile --vault-name testmoh
 #      ls -l
 #      pwd
 
-# Download Azure Key Vault Secrets
-- task: AzureKeyVault@1
-  inputs:
-    azureSubscription: 'Pay-As-You-Go (b5e3024f-bc2c-4de4-8db0-bd025a10d518)'
-    keyVaultName: 'testmoh'
-    secretsFilter: 'secretfile' # Options: editableOptions
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
