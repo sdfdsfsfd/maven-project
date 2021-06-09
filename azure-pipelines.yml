@@ -10,8 +10,8 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-- group: setting_secret
+#variables:
+#- group: setting_secret
 
 steps:
 
