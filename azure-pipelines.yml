@@ -44,8 +44,8 @@ steps:
         <servers>
           <server>
             <id>moh</id>
-            <username>$(uname)</username>
-            <password>$(pwd)</password>
+            <username>mohasinpathan005</username>
+            <password>3e5b2wslpn6uwm7sufnopi67wkqp7phutnmdgvsk7krtfvbnay5q</password>
           </server>
         </servers>
         </settings>
